@@ -1,11 +1,10 @@
 # Wireframe:
 
-![alt text](imgs/Capstone-ERD.jpeg "Picture of Project Wire-Frame")
+![alt text](imgs/Capstone-Wireframe.jpeg "Picture of Project ERD")
 
 # ERD Diagram:
 
-![alt text](imgs/Capstone-Wireframe.jpeg "Picture of Project ERD")
-
+![alt text](imgs/Capstone-ERD.jpeg "Picture of Project Wire-Frame")
 
 # User Stories:
 ###### Items with '*' are reach goals
