@@ -11,7 +11,7 @@ curl "${API}${URL_PATH}" \
   --data '{
     "comment": {
       "user_id": 1,
-      "article_id": 2,
+      "article_id": 3,
       "title": "Comment Curl Script",
       "body": "Comment Body"
     }
