@@ -1,7 +1,7 @@
 #!/bin/bash
 
 API="http://localhost:4741"
-URL_PATH="/articles"
+URL_PATH="/comments"
 
 curl "${API}${URL_PATH}/${ID}" \
   --include \
@@ -9,8 +9,8 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "article": {
-      "title": "Updated Title"
+    "comment": {
+      "title": "Updated Comment"
     }
   }'
 
