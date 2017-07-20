@@ -2,7 +2,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body{
-    background-image: url("http://cdn.wallpapersafari.com/19/49/XwGEix.jpg");
+    background-image: url(/images/TheaterMirrorBackground.jpg);
     padding:50px;
     background-size: cover;
     height: 500px;
@@ -97,6 +97,13 @@ body{
 	margin: 30px auto;
 	overflow: hidden;
 }
+.notifications {
+  background-color: black;
+  color: white;
+	width: 60%;
+	margin: 30px auto;
+	overflow: hidden;
+}
 .galleryItem {
   background-color: black;
 	color: #797478;
@@ -112,4 +119,12 @@ body{
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+}
+.navbar-nav .open .dropdown-menu > li > a.dropdown-toggle-inner,
+.navbar-nav .open .dropdown-menu > li > a.dropdown-toggle-inner:hover {
+  color: #fff;
+  background-color:#55acee;
+}
+#actions-dropdown {
+  margin-left: -125%;
 }

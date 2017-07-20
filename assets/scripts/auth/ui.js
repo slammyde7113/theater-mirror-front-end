@@ -2,21 +2,22 @@
 const showArticlesTemplate = require('../templates/all-articles.handlebars')
 const showArticleTemplate = require('../templates/one-article.handlebars')
 
-// const showProfilesTemplate = require('../templates/profiles-list.handlebars')
-// const showCouponTemplate = require('../templates/coupon-list.handlebars')
-// const api = require('./api')
-
 const signUpSuccess = (data) => {
   console.log(data, 'sign up success')
   $('#register-dropdown').dropdown('toggle')
-  //*[@id="register-dropdown"]/a
+  $('.notifications').empty()
+  $('.notifications').append('Success!')
 }
 
 const signUpFailure = (data) => {
   console.log(data, 'sign in failure')
+  $('.notifications').empty()
+  $('.notifications').append('Error!')
 }
 const signInSuccess = (data) => {
   console.log(data, 'sign in success')
+  $('.notifications').empty()
+  $('.notifications').append('Success!')
 }
 
 const signInFailure = (data) => {
@@ -25,55 +26,83 @@ const signInFailure = (data) => {
 const changePasswordSuccess = (data) => {
   console.log(data, 'change password success')
   $('#register-dropdown').dropdown('toggle')
+  $('.notifications').empty()
+  $('.notifications').append('Success!')
 }
 
 const changePasswordFailure = (data) => {
   console.log(data, 'change password failure')
+  $('.notifications').empty()
+  $('.notifications').append('Error!')
 }
 const signOutSuccess = (data) => {
   console.log(data, 'signout success')
   $('#register-dropdown').dropdown('toggle')
+  $('.notifications').empty()
+  $('.notifications').append('Success!')
 }
 
 const signOutFailure = (data) => {
   console.log(data, 'signout failure')
+  $('.notifications').empty()
+  $('.notifications').append('Error!')
 }
 const showArticlesSuccess = (data) => {
   console.log(data)
   $('.article-container').empty()
   const showArticlesHtml = showArticlesTemplate({ article: data.articles })
   $('.article-container').append(showArticlesHtml)
+  $('.notifications').empty()
+  $('.notifications').append('Success!')
 }
 const showArticlesFailure = (data) => {
   console.log(data)
+  $('.notifications').empty()
+  $('.notifications').append('Error!')
 }
 const searchArticlesSuccess = (data) => {
   console.log(data)
   $('.article-container').empty()
   const showArticleHtml = showArticleTemplate({ article: data.article })
   $('.article-container').append(showArticleHtml)
+  $('.notifications').empty()
+  $('.notifications').append('Success!')
 }
 const searchArticlesFailure = (data) => {
   console.log(data)
+  $('.notifications').empty()
+  $('.notifications').append('Error!')
 }
 
 const createArticleSuccess = (data) => {
   console.log(data, 'create article success')
+  $('.notifications').empty()
+  $('.notifications').append('Success!')
 }
 const createArticleFailure = (data) => {
   console.log(data, 'create article failure')
+  $('.notifications').empty()
+  $('.notifications').append('Error!')
 }
 const updateArticleSuccess = (data) => {
   console.log(data, 'update article success')
+  $('.notifications').empty()
+  $('.notifications').append('Success!')
 }
 const updateArticleFailure = (data) => {
   console.log(data, 'update article failure')
+  $('.notifications').empty()
+  $('.notifications').append('Error!')
 }
 const deleteArticleSuccess = (data) => {
   console.log(data, 'delete success')
+  $('.notifications').empty()
+  $('.notifications').append('Success!')
 }
 const deleteArticleFailure = (data) => {
   console.log(data, 'delete failure')
+  $('.notifications').empty()
+  $('.notifications').append('Error!')
 }
 
 module.exports = {

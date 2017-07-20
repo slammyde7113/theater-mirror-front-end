@@ -5,7 +5,6 @@ const config = require('./config')
 const api = require('./auth/api.js')
 
 $(() => {
-
   setAPIOrigin(location, config)
 })
 
@@ -22,5 +21,12 @@ $(() => {
   api.signInGuest()
   .then(() => {
     $('#show-articles').trigger('click')
+  })
+  $('.dropdown li').click(function (e) {
+    e.stopPropagation()
+  })
+  $('.dropdown-inner').click(function (e) {
+    e.stopPropagation()
+    $(this).toggleClass('open').trigger('shown.bs.dropdown')
   })
 })
