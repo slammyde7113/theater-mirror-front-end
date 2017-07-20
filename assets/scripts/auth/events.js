@@ -39,8 +39,8 @@ const onSignOut = function (event) {
 const addHandlers = () => {
   $('.register-form').on('submit', onSignUp)
   $('.login-form').on('submit', onSignIn)
-  $('#change-pass').on('submit', onChangePassword)
-  $('#sign-out').on('click', onSignOut)
+  $('.change-password-form').on('submit', onChangePassword)
+  $('#sign-out-button').on('click', onSignOut)
 }
 
 module.exports = {

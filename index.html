@@ -74,13 +74,24 @@
       											 <label class="sr-only">Password</label>
       											 <input type="password" class="form-control" name="[credentials][password]" placeholder="Password" required>
       										</div>
-                          <div class="form-group">
-      											 <label class="sr-only">Password Confirmation</label>
-      											 <input type="password" class="form-control" name="[credentials][password_confirmation]" placeholder="Password" required>
-      										</div>
       										<div class="form-group">
-      											 <button id="login-button" type="submit" class="btn btn-primary btn-block">Sign in</button>
+      											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
       										</div>
+                        </form>
+                          <div class="sign-out-div">
+                            <button id="sign-out-button" class="form-group" type="submit" class="btn btn-primary btn-block">Sign out</button>
+                          </div>
+                          <form class="change-password-form">
+         										<div class="form-group">
+         											 <label class="sr-only">Password</label>
+         											 <input type="password" class="form-control" name="[passwords][old]" placeholder="Old Password" required>
+         										</div>
+                            <div>
+                              <input type="password" class="form-control" name="[passwords][new]" placeholder="New Password" required>
+                            </div>
+         										<div class="form-group">
+         											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+         										</div>
       								 </form>
       							</div>
       					 </div>
