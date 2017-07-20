@@ -2,7 +2,7 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-const handlebars = require('handlebars')
+const api = require('./auth/api.js')
 
 $(() => {
 
@@ -19,4 +19,8 @@ const authEvents = require('./auth/events.js')
 
 $(() => {
   authEvents.addHandlers()
+  api.signInGuest()
+  .then(() => {
+    $('#show-articles').trigger('click')
+  })
 })

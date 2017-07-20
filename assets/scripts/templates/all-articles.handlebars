@@ -1,15 +1,16 @@
 {{#each article as |item|}}
- <ul>
-  <h1 class="galleryItem" data-id="{{item.id}}"> <li><strong>{{item.title}}</strong></li></h1>
+  <h1 class="galleryItem" data-id="{{item.id}}"> <strong>{{item.title}}</strong></h1>
   <div class="galleryItem" data-id="{{item.id}}">
-    <li>{{item.body}}</li>
+    <p>Article ID: {{item.id}}</p>
+    <p>{{item.body}}</p>
     <br></br>
     {{#each comments as |comment|}}
       <div data-id="{{comment.id}}">
-        <li>{{comment.title}}</li>
-        <li>{{comment.body}}</li>
+        <p>Comment ID: {{comment.id}}</p>
+        <p>{{comment.title}}</p>
+        <p>{{comment.body}}</p>
       </div>
+      <br></br>
     {{/each}}
   </div>
-</ul>
 {{/each}}

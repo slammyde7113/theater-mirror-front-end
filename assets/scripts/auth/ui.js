@@ -34,9 +34,9 @@ const signOutFailure = (data) => {
 }
 const showArticlesSuccess = (data) => {
   console.log(data)
+  $('.article-container').empty()
   const showArticlesHtml = showArticlesTemplate({ article: data.articles })
   $('.article-container').append(showArticlesHtml)
-    debugger
 }
 const showArticlesFailure = (data) => {
   console.log(data)

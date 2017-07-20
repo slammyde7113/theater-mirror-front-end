@@ -36,7 +36,6 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 const onShowArticles = function () {
-  event.preventDefault()
   api.showArticles()
     .then(ui.showArticlesSuccess)
     .catch(ui.showArticlesFailure)
@@ -67,6 +66,7 @@ const onDeleteArticle = function (event) {
 const onCreateComment = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(data)
   api.createComment(data)
     .then(ui.createCommentSuccess)
     .catch(ui.createCommentFailure)

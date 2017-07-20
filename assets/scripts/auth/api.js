@@ -10,7 +10,25 @@ const signUp = function (data) {
   })
   .then(console.log)
 }
+const signInGuest = function () {
+  return $.ajax({
+    url: `${config.apiOrigins.development}/sign-in`,
+    method: 'POST',
+    data: {
+      'credentials': {
+        'email': 'Guest User',
+        'password': 'guest'
+      }
+    }
+  })
+  .then((response) => {
+    store.userToken = response.user.token
+    store.id = response.user.id
+    return store.userToken
+  })
+}
 const signIn = function (data) {
+  console.log(data)
   return $.ajax({
     url: `${config.apiOrigins.development}/sign-in`,
     method: 'POST',
@@ -39,6 +57,9 @@ const signOut = function () {
     headers: {
       'Authorization': `Token token=${store.userToken}`
     }
+  })
+  .then(() => {
+    signInGuest()
   })
 }
 const showArticles = function (data) {
@@ -112,6 +133,7 @@ const deleteComment = function () {
 module.exports = {
   signUp,
   signIn,
+  signInGuest,
   changePassword,
   signOut,
   showArticles,
