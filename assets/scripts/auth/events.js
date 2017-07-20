@@ -58,6 +58,29 @@ const onDeleteArticle = function (event) {
     .then(ui.deleteArticleSuccess)
     .catch(ui.deleteArticleFailure)
 }
+const onCreateComment = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.createComment(data)
+    .then(ui.createCommentSuccess)
+    .catch(ui.createCommentFailure)
+}
+const onUpdateComment = function (event) {
+  event.preventDefault()
+  store.comment_id = $('.comment-id').val()
+  console.log(store.article_id)
+  const data = getFormFields(event.target)
+  api.updateComment(data)
+    .then(ui.updateCommentSuccess)
+    .catch(ui.updateCommentFailure)
+}
+const onDeleteComment = function (event) {
+  event.preventDefault()
+  store.comment_id = $('.delete-comment-id').val()
+  api.deleteComment()
+    .then(ui.deleteArticleSuccess)
+    .catch(ui.deleteArticleFailure)
+}
 
 const addHandlers = () => {
   $('.register-form').on('submit', onSignUp)
@@ -66,7 +89,10 @@ const addHandlers = () => {
   $('#sign-out-button').on('click', onSignOut)
   $('.article-form').on('submit', onCreateArticle)
   $('.article-edit-delete-form').on('submit', onUpdateArticle)
-  $('#delete-button').on('click', onDeleteArticle)
+  $('#article-delete-button').on('click', onDeleteArticle)
+  $('.comment-form').on('submit', onCreateComment)
+  $('.comment-edit-delete-form').on('submit', onUpdateComment)
+  $('#comment-delete-button').on('click', onDeleteComment)
 }
 
 module.exports = {

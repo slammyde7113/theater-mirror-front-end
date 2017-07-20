@@ -231,9 +231,60 @@
         <input class=delete-article-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
       </div>
       <div>
-        <button id="delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
+        <button id="article-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
       </div>
     </div>
+
+    <div class="input-form">
+    <!-- Individual Comment -->
+    <h3> Create Comment </h3>
+    <form class=comment-form>
+      <div>
+         <label>Article ID</label>
+         <input type="text" class="form-control" name="[comment][id]" placeholder="Title" required>
+       </div>
+      <div>
+         <label>Title</label>
+         <input type="text" class="form-control" name="[comment][title]" placeholder="Title" required>
+       </div>
+       <div>
+         <label>Body</label>
+         <input type="text" class="form-control" name="[comment][body]" placeholder="Body" required>
+       </div>
+       <div>
+         <button type="submit" class="btn btn-primary btn-block">Post</button>
+       </div>
+    </form>
+  </div>
+
+  <div class="input-form">
+    <!-- Update/Delete Comment -->
+    <h3> Update/Delete Comment </h3>
+    <div>
+      <label>Comment ID</label>
+      <input class=comment-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+    </div>
+    <form class=comment-edit-delete-form>
+      <div>
+         <label>Title</label>
+         <input type="text" class="form-control" name="[comment][title]" placeholder="Title" required>
+       </div>
+       <div>
+         <label>Body</label>
+         <input type="text" class="form-control" name="[comment][body]" placeholder="Body" required>
+       </div>
+       <div>
+         <button type="submit" class="btn btn-primary btn-block">Edit</button>
+       </div>
+    </form>
+    <div>
+      <label>Comment ID</label>
+      <input class=delete-comment-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+    </div>
+    <div>
+      <button id="comment-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
+    </div>
+  </div>
 
 
     </body>

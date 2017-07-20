@@ -70,6 +70,35 @@ const deleteArticle = function () {
     method: 'DELETE'
   })
 }
+const createComment = function (data) {
+  return $.ajax({
+    headers: {
+      'Authorization': `Token token=${store.userToken}`
+    },
+    url: `${config.apiOrigins.development}/comments`,
+    method: 'POST',
+    data
+  })
+}
+const updateComment = function (data) {
+  return $.ajax({
+    headers: {
+      'Authorization': `Token token=${store.userToken}`
+    },
+    url: `${config.apiOrigins.development}/comments/${store.comment_id}`,
+    method: 'PATCH',
+    data
+  })
+}
+const deleteComment = function () {
+  return $.ajax({
+    headers: {
+      'Authorization': `Token token=${store.userToken}`
+    },
+    url: `${config.apiOrigins.development}/comments/${store.comment_id}`,
+    method: 'DELETE'
+  })
+}
 
 module.exports = {
   signUp,
@@ -78,5 +107,8 @@ module.exports = {
   signOut,
   createArticle,
   updateArticle,
-  deleteArticle
+  deleteArticle,
+  createComment,
+  updateComment,
+  deleteComment
 }
