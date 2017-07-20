@@ -17,6 +17,7 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  $('#register-dropdown').dropdown('toggle')
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
