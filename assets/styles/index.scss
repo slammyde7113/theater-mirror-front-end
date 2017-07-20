@@ -7,6 +7,7 @@ body{
     background-size: cover;
 }
 
+// Navbar
 #login-dp{
     min-width: 250px;
     padding: 14px 14px 0;
@@ -80,4 +81,33 @@ body{
         background-color: inherit;
         border-top:0 none;
     }
+}
+.input-form {
+  background-color: white;
+}
+// Article Container
+.article-container {
+	width: 60%;
+	margin: 30px auto;
+	overflow: hidden;
+}
+.galleryItem {
+  background-color: black;
+	color: #797478;
+	font: 10px/1.5 Verdana, Helvetica, sans-serif;
+	float: left;
+  width: 29%;
+  height: 100%;
+	margin:  2% 2% 25px 2%;
+}
+
+.galleryItem h3 {
+	text-transform: uppercase;
+}
+
+.galleryItem img {
+	max-width: 100%;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }

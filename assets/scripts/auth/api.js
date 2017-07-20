@@ -41,10 +41,42 @@ const signOut = function () {
     }
   })
 }
+const createArticle = function (data) {
+  return $.ajax({
+    headers: {
+      'Authorization': `Token token=${store.userToken}`
+    },
+    url: `${config.apiOrigins.development}/articles`,
+    method: 'POST',
+    data
+  })
+}
+const updateArticle = function (data) {
+  return $.ajax({
+    headers: {
+      'Authorization': `Token token=${store.userToken}`
+    },
+    url: `${config.apiOrigins.development}/articles/${store.article_id}`,
+    method: 'PATCH',
+    data
+  })
+}
+const deleteArticle = function () {
+  return $.ajax({
+    headers: {
+      'Authorization': `Token token=${store.userToken}`
+    },
+    url: `${config.apiOrigins.development}/articles/${store.article_id}`,
+    method: 'DELETE'
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createArticle,
+  updateArticle,
+  deleteArticle
 }

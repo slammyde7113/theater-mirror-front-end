@@ -107,7 +107,7 @@
       								 <form class="register-form">
                          <div>
                             <label>Email address</label>
-                            <input type="email" class="form-control" name="[credentials][email]" placeholder="Email address" required>
+                            <input type="email" class="form-control" name="[credentials][email]" placeholder="Email address">
                           </div>
                           <div>
                             <label>Password</label>
@@ -129,6 +129,112 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
+
+
+      <!-- Articles -->
+      <div class="article-container">
+      	<div class="galleryItem">
+      		<a href="#"><img src="..." alt="" /></a>
+      		<h3>Title</h3>
+      		<p>Lorem ipsum dolor sit amet...</p>
+      	</div>
+
+      	<div class="galleryItem">
+      		<a href="#"><img src="..." alt="" /></a>
+      		<h3>Title</h3>
+      		<p>Lorem ipsum dolor sit amet...</p>
+      	</div>
+
+        <div class="galleryItem">
+      		<a href="#"><img src="..." alt="" /></a>
+      		<h3>Title</h3>
+      		<p>Lorem ipsum dolor sit amet...</p>
+      	</div>
+
+        <div class="galleryItem">
+      		<a href="#"><img src="..." alt="" /></a>
+      		<h3>Title</h3>
+      		<p>Lorem ipsum dolor sit amet...</p>
+      	</div>
+
+      	<div class="galleryItem">
+      		<a href="#"><img src="..." alt="" /></a>
+      		<h3>Title</h3>
+      		<p>Lorem ipsum dolor sit amet...</p>
+      	</div>
+
+        <div class="galleryItem">
+      		<a href="#"><img src="..." alt="" /></a>
+      		<h3>Title</h3>
+      		<p>Lorem ipsum dolor sit amet...</p>
+      	</div>
+
+        <div class="galleryItem">
+      		<a href="#"><img src="..." alt="" /></a>
+      		<h3>Title</h3>
+      		<p>Lorem ipsum dolor sit amet...</p>
+      	</div>
+
+      	<div class="galleryItem">
+      		<a href="#"><img src="..." alt="" /></a>
+      		<h3>Title</h3>
+      		<p>Lorem ipsum dolor sit amet...</p>
+      	</div>
+
+        <div class="galleryItem">
+      		<a href="#"><img src="..." alt="" /></a>
+      		<h3>Title</h3>
+      		<p>Lorem ipsum dolor sit amet...</p>
+      	</div>
+      </div>
+
+      <div class="input-form">
+      <!-- Individual Article -->
+      <h3> Create Article </h3>
+      <form class=article-form>
+        <div>
+           <label>Title</label>
+           <input type="text" class="form-control" name="[article][title]" placeholder="Title" required>
+         </div>
+         <div>
+           <label>Body</label>
+           <input type="text" class="form-control" name="[article][body]" placeholder="Body" required>
+         </div>
+         <div>
+           <button type="submit" class="btn btn-primary btn-block">Post</button>
+         </div>
+      </form>
+    </div>
+
+    <div class="input-form">
+      <!-- Update/Delete Article -->
+      <h3> Update/Delete Article </h3>
+      <div>
+        <label>Article ID</label>
+        <input class=article-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+      </div>
+      <form class=article-edit-delete-form>
+        <div>
+           <label>Title</label>
+           <input type="text" class="form-control" name="[article][title]" placeholder="Title" required>
+         </div>
+         <div>
+           <label>Body</label>
+           <input type="text" class="form-control" name="[article][body]" placeholder="Body" required>
+         </div>
+         <div>
+           <button type="submit" class="btn btn-primary btn-block">Edit</button>
+         </div>
+      </form>
+      <div>
+        <label>Article ID</label>
+        <input class=delete-article-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+      </div>
+      <div>
+        <button id="delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
+      </div>
+    </div>
+
 
     </body>
 </html>

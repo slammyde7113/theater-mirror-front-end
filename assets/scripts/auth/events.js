@@ -35,12 +35,38 @@ const onSignOut = function (event) {
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
+const onCreateArticle = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.createArticle(data)
+    .then(ui.createArticleSuccess)
+    .catch(ui.createArticleFailure)
+}
+const onUpdateArticle = function (event) {
+  event.preventDefault()
+  store.article_id = $('.article-id').val()
+  console.log(store.article_id)
+  const data = getFormFields(event.target)
+  api.updateArticle(data)
+    .then(ui.updateArticleSuccess)
+    .catch(ui.updateArticleFailure)
+}
+const onDeleteArticle = function (event) {
+  event.preventDefault()
+  store.article_id = $('.delete-article-id').val()
+  api.deleteArticle()
+    .then(ui.deleteArticleSuccess)
+    .catch(ui.deleteArticleFailure)
+}
 
 const addHandlers = () => {
   $('.register-form').on('submit', onSignUp)
   $('.login-form').on('submit', onSignIn)
   $('.change-password-form').on('submit', onChangePassword)
   $('#sign-out-button').on('click', onSignOut)
+  $('.article-form').on('submit', onCreateArticle)
+  $('.article-edit-delete-form').on('submit', onUpdateArticle)
+  $('#delete-button').on('click', onDeleteArticle)
 }
 
 module.exports = {

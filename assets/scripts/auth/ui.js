@@ -32,6 +32,24 @@ const signOutSuccess = (data) => {
 const signOutFailure = (data) => {
   console.log(data, 'signout failure')
 }
+const createArticleSuccess = (data) => {
+  console.log(data, 'create article success')
+}
+const createArticleFailure = (data) => {
+  console.log(data, 'create article failure')
+}
+const updateArticleSuccess = (data) => {
+  console.log(data, 'update article success')
+}
+const updateArticleFailure = (data) => {
+  console.log(data, 'update article failure')
+}
+const deleteArticleSuccess = (data) => {
+  console.log(data, 'delete success')
+}
+const deleteArticleFailure = (data) => {
+  console.log(data, 'delete failure')
+}
 
 module.exports = {
   signUpSuccess,
@@ -41,5 +59,11 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutFailure,
-  signOutSuccess
+  signOutSuccess,
+  createArticleSuccess,
+  createArticleFailure,
+  updateArticleSuccess,
+  updateArticleFailure,
+  deleteArticleSuccess,
+  deleteArticleFailure
 }
