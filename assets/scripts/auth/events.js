@@ -35,6 +35,12 @@ const onSignOut = function (event) {
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
+const onShowArticles = function () {
+  event.preventDefault()
+  api.showArticles()
+    .then(ui.showArticlesSuccess)
+    .catch(ui.showArticlesFailure)
+}
 const onCreateArticle = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -87,6 +93,7 @@ const addHandlers = () => {
   $('.login-form').on('submit', onSignIn)
   $('.change-password-form').on('submit', onChangePassword)
   $('#sign-out-button').on('click', onSignOut)
+  $('#show-articles').on('click', onShowArticles)
   $('.article-form').on('submit', onCreateArticle)
   $('.article-edit-delete-form').on('submit', onUpdateArticle)
   $('#article-delete-button').on('click', onDeleteArticle)

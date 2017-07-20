@@ -41,6 +41,15 @@ const signOut = function () {
     }
   })
 }
+const showArticles = function (data) {
+  return $.ajax({
+    headers: {
+      'Authorization': `Token token=${store.userToken}`
+    },
+    url: `${config.apiOrigins.development}/articles`,
+    method: 'GET'
+  })
+}
 const createArticle = function (data) {
   return $.ajax({
     headers: {
@@ -105,6 +114,7 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
+  showArticles,
   createArticle,
   updateArticle,
   deleteArticle,
