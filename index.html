@@ -51,7 +51,7 @@
               </div>
             <ul class="nav navbar-nav navbar-right">
               <li><p class="navbar-text">Already have an account?</p></li>
-              <li class="dropdown">
+              <li id="login-dropdown" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
 
             <!--Login-->
@@ -100,10 +100,16 @@
               </li>
 
               <!-- Register -->
-              <li class="dropdown">
+              <li id="register-dropdown" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Register</b> <span class="caret"></span></a>
       			<ul id="register-dp" class="dropdown-menu">
       					 <div class="row">
+                   <div class="col-md-12">
+                     Register via
+                     <div class="social-buttons">
+                       <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                       <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                     </div>
       								 <form class="register-form">
                          <div>
                             <label>Email address</label>
@@ -122,6 +128,7 @@
                             <button type="submit" class="btn btn-primary btn-block">Sign up</button>
       								 </form>
       							</div>
+                  </div>
       					 </div>
       			</ul>
               </li>

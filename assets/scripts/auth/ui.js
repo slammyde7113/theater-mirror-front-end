@@ -8,6 +8,8 @@ const showArticleTemplate = require('../templates/one-article.handlebars')
 
 const signUpSuccess = (data) => {
   console.log(data, 'sign up success')
+  $('#register-dropdown').dropdown('toggle')
+  //*[@id="register-dropdown"]/a
 }
 
 const signUpFailure = (data) => {
@@ -22,6 +24,7 @@ const signInFailure = (data) => {
 }
 const changePasswordSuccess = (data) => {
   console.log(data, 'change password success')
+  $('#register-dropdown').dropdown('toggle')
 }
 
 const changePasswordFailure = (data) => {
@@ -29,6 +32,7 @@ const changePasswordFailure = (data) => {
 }
 const signOutSuccess = (data) => {
   console.log(data, 'signout success')
+  $('#register-dropdown').dropdown('toggle')
 }
 
 const signOutFailure = (data) => {
