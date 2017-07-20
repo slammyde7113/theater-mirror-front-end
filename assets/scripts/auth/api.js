@@ -71,6 +71,15 @@ const showArticles = function (data) {
     method: 'GET'
   })
 }
+const searchArticles = function (data) {
+  return $.ajax({
+    headers: {
+      'Authorization': `Token token=${store.userToken}`
+    },
+    url: `${config.apiOrigins.development}/articles/${data.articles.id}`,
+    method: 'GET'
+  })
+}
 const createArticle = function (data) {
   return $.ajax({
     headers: {
@@ -137,6 +146,7 @@ module.exports = {
   changePassword,
   signOut,
   showArticles,
+  searchArticles,
   createArticle,
   updateArticle,
   deleteArticle,

@@ -1,5 +1,7 @@
 'use strict'
 const showArticlesTemplate = require('../templates/all-articles.handlebars')
+const showArticleTemplate = require('../templates/one-article.handlebars')
+
 // const showProfilesTemplate = require('../templates/profiles-list.handlebars')
 // const showCouponTemplate = require('../templates/coupon-list.handlebars')
 // const api = require('./api')
@@ -41,6 +43,16 @@ const showArticlesSuccess = (data) => {
 const showArticlesFailure = (data) => {
   console.log(data)
 }
+const searchArticlesSuccess = (data) => {
+  console.log(data)
+  $('.article-container').empty()
+  const showArticleHtml = showArticleTemplate({ article: data.article })
+  $('.article-container').append(showArticleHtml)
+}
+const searchArticlesFailure = (data) => {
+  console.log(data)
+}
+
 const createArticleSuccess = (data) => {
   console.log(data, 'create article success')
 }
@@ -71,6 +83,8 @@ module.exports = {
   signOutSuccess,
   showArticlesSuccess,
   showArticlesFailure,
+  searchArticlesSuccess,
+  searchArticlesFailure,
   createArticleSuccess,
   createArticleFailure,
   updateArticleSuccess,

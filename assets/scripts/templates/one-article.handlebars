@@ -1,0 +1,14 @@
+  <h1 class="galleryItem" data-id="{{item.id}}"> <strong>{{article.title}}</strong></h1>
+  <div class="galleryItem" data-id="{{item.id}}">
+    <p>Article ID: {{article.id}}</p>
+    <p>{{article.body}}</p>
+    <br></br>
+    {{#each article.comments as |comment|}}
+      <div data-id="{{comment.id}}">
+        <p>Comment ID: {{comment.id}}</p>
+        <p>{{comment.title}}</p>
+        <p>{{comment.body}}</p>
+      </div>
+      <br></br>
+    {{/each}}
+  </div>

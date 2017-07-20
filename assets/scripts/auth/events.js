@@ -40,6 +40,14 @@ const onShowArticles = function () {
     .then(ui.showArticlesSuccess)
     .catch(ui.showArticlesFailure)
 }
+const onSearchArticles = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.searchArticles(data)
+    .then(ui.searchArticlesSuccess)
+    .catch(ui.searchArticlesFailure)
+}
 const onCreateArticle = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -94,6 +102,7 @@ const addHandlers = () => {
   $('.change-password-form').on('submit', onChangePassword)
   $('#sign-out-button').on('click', onSignOut)
   $('#show-articles').on('click', onShowArticles)
+  $('#search-form').on('submit', onSearchArticles)
   $('.article-form').on('submit', onCreateArticle)
   $('.article-edit-delete-form').on('submit', onUpdateArticle)
   $('#article-delete-button').on('click', onDeleteArticle)
