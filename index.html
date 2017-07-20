@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>TheaterMirror</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -12,14 +12,227 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <nav class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Theater Mirror</a>
+          </div>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li id="show-articles" class="active"><a href="#">Articles</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+              <div>
+                <form id="search-form" class="navbar-form navbar-left" role="search">
+                <input type="text" class="form-control" name=articles[id] placeholder="Search by Article ID">
+                <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+              </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li><p class="navbar-text">Already have an account?</p></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+
+            <!--Login-->
+      			<ul id="login-dp" class="dropdown-menu">
+      				<li>
+      					 <div class="row">
+      							<div class="col-md-12">
+      								Login via
+      								<div class="social-buttons">
+      									<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+      									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+      								</div>
+                                      or
+      								 <form class="login-form">
+      										<div class="form-group">
+      											 <label class="sr-only">Email address</label>
+      											 <input type="email" class="form-control" name="[credentials][email]" placeholder="Email address" required>
+      										</div>
+      										<div class="form-group">
+      											 <label class="sr-only">Password</label>
+      											 <input type="password" class="form-control" name="[credentials][password]" placeholder="Password" required>
+      										</div>
+      										<div class="form-group">
+      											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+      										</div>
+                        </form>
+                          <div class="sign-out-div">
+                            <button id="sign-out-button" class="form-group" type="submit" class="btn btn-primary btn-block">Sign out</button>
+                          </div>
+                          <form class="change-password-form">
+         										<div class="form-group">
+         											 <label class="sr-only">Password</label>
+         											 <input type="password" class="form-control" name="[passwords][old]" placeholder="Old Password" required>
+         										</div>
+                            <div>
+                              <input type="password" class="form-control" name="[passwords][new]" placeholder="New Password" required>
+                            </div>
+         										<div class="form-group">
+         											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+         										</div>
+      								 </form>
+      							</div>
+      					 </div>
+      				</li>
+      			</ul>
+              </li>
+
+              <!-- Register -->
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Register</b> <span class="caret"></span></a>
+      			<ul id="register-dp" class="dropdown-menu">
+      					 <div class="row">
+      								 <form class="register-form">
+                         <div>
+                            <label>Email address</label>
+                            <input type="email" class="form-control" name="[credentials][email]" placeholder="Email address">
+                          </div>
+                          <div>
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="[credentials][password]" placeholder="Password" required>
+                          </div>
+                          <div>
+                            <label>Password Confirmation</label>
+                            <input type="password" class="form-control" name="[credentials][password_confirmation]" placeholder="Password Confirmation" required>
+                          </div>
+                            <label> Account Status: Member</label>
+                            <input type="hidden" class="form-control" name="[credentials][member]" value=true>
+                            <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+      								 </form>
+      							</div>
+      					 </div>
+      			</ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+
+      <!-- Articles -->
+      <div class="article-container">
+      </div>
+
+      <div class="input-form">
+      <!-- Individual Article -->
+      <h3> Create Article </h3>
+      <form class=article-form>
+        <div>
+           <label>Title</label>
+           <input type="text" class="form-control" name="[article][title]" placeholder="Title" required>
+         </div>
+         <div>
+           <label>Body</label>
+           <input type="text" class="form-control" name="[article][body]" placeholder="Body" required>
+         </div>
+         <div>
+           <button type="submit" class="btn btn-primary btn-block">Post</button>
+         </div>
+      </form>
+    </div>
+
+    <div class="input-form">
+      <!-- Update/Delete Article -->
+      <h3> Update/Delete Article </h3>
+      <div>
+        <label>Article ID</label>
+        <input class=article-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+      </div>
+      <form class=article-edit-delete-form>
+        <div>
+           <label>Title</label>
+           <input type="text" class="form-control" name="[article][title]" placeholder="Title" required>
+         </div>
+         <div>
+           <label>Body</label>
+           <input type="text" class="form-control" name="[article][body]" placeholder="Body" required>
+         </div>
+         <div>
+           <button type="submit" class="btn btn-primary btn-block">Edit</button>
+         </div>
+      </form>
+      <div>
+        <label>Article ID</label>
+        <input class=delete-article-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+      </div>
+      <div>
+        <button id="article-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
+      </div>
+    </div>
+
+    <div class="input-form">
+    <!-- Individual Comment -->
+    <h3> Create Comment </h3>
+    <form class=comment-form>
+      <div>
+         <label>Article ID</label>
+         <input type="text" class="form-control" name="[comment][article_id]" placeholder="Title" required>
+       </div>
+      <div>
+         <label>Title</label>
+         <input type="text" class="form-control" name="[comment][title]" placeholder="Title" required>
+       </div>
+       <div>
+         <label>Body</label>
+         <input type="text" class="form-control" name="[comment][body]" placeholder="Body" required>
+       </div>
+       <div>
+         <button type="submit" class="btn btn-primary btn-block">Post</button>
+       </div>
+    </form>
+  </div>
+
+  <div class="input-form">
+    <!-- Update/Delete Comment -->
+    <h3> Update/Delete Comment </h3>
+    <div>
+      <label>Comment ID</label>
+      <input class=comment-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+    </div>
+    <form class=comment-edit-delete-form>
+      <div>
+         <label>Title</label>
+         <input type="text" class="form-control" name="[comment][title]" placeholder="Title" required>
+       </div>
+       <div>
+         <label>Body</label>
+         <input type="text" class="form-control" name="[comment][body]" placeholder="Body" required>
+       </div>
+       <div>
+         <button type="submit" class="btn btn-primary btn-block">Edit</button>
+       </div>
+    </form>
+    <div>
+      <label>Comment ID</label>
+      <input class=delete-comment-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+    </div>
+    <div>
+      <button id="comment-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
+    </div>
+  </div>
+
+
     </body>
 </html>
