@@ -32,8 +32,10 @@ TheaterMirror is a online blog dedicated to reviewing theater plays, books, and 
 
 ### Work Flow Breakdown
 This project consisted of two phases
+
     1.) Backend Development
     2.) Frontend development
+    
   In the backend development phase, research was done to implement specific Ruby gems, such as [CanCan](https://rubygems.org/gems/cancan/versions/1.6.10) and [Paperclip](https://rubygems.org/gems/paperclip/versions/4.3.6). Initially, CanCan was going to be used for authentication, however a much simpler work around was incorporated through the GA Rails template. Paperclip will be incorporated at a later date to facilitate uploads, but the multi-role authentication (guest, member, and admin) took priority.
    Frontend development was straight forward, using Ajax to communicate with Rails, and jQuery to manipulate the DOM. Handlebars was used to dynamically bind elements retrieved from the backend to elements in the DOM and HTML5/CSS was used to display them. Styling was done primarily with Bootstrap.
 
