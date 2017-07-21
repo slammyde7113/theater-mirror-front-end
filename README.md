@@ -1,3 +1,15 @@
+[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+
+# TheaterMirror
+### By Sam Dyer
+#### In Association With General Assembly
+
+Link to hosted application:
+[TheaterMirror By Sam Dyer](https://slammyde7113.github.io/theater-mirror-front-end/)
+
+Link to back-end api:
+[Rails Api](https://github.com/slammyde7113/theater-mirror-back-end)
+
 # Wireframe:
 
 ![alt text](imgs/Capstone-Wireframe.jpeg "Picture of Project ERD")
@@ -5,6 +17,27 @@
 # ERD Diagram:
 
 ![alt text](imgs/Capstone-ERD.jpeg "Picture of Project Wire-Frame")
+
+# Technologies Used:
+-   [Webpack](https://webpack.github.io)
+-   [Bootstrap](http://getbootstrap.com)
+-   [Handlebars.js](http://handlebarsjs.com)
+-   [Grunt](https://gruntjs.com/)
+-   [Rails](http://rubyonrails.org/)
+
+# Project History:
+
+### Description
+TheaterMirror is a online blog dedicated to reviewing theater plays, books, and movies. It was built to replace the another website that serves a similiar function. On TheaterMirror, visitors of the site can read articles, members can read and post articles, and the administrator can post articles, make comments, and read articles.
+
+### Work Flow Breakdown
+This project consisted of two phases:
+  1.) Backend Development
+  2.) Frontend development
+
+    In the backend development phase, research was done to implement specific Ruby gems, such as [CanCan](https://rubygems.org/gems/cancan/versions/1.6.10) and [Paperclip](https://rubygems.org/gems/paperclip/versions/4.3.6). Initially, CanCan was going to be used for authentication, however a much simpler work around was incorporated through the GA Rails template. Paperclip will be incorporated at a later date to facilitate uploads, but the multi-role authentication (guest, member, and admin) took priority.
+
+    Frontend development was straight forward, using Ajax to communicate with Rails, and jQuery to manipulate the DOM. Handlebars was used to dynamically bind elements retrieved from the backend to elements in the DOM and HTML5/CSS was used to display them. Styling was done primarily with Bootstrap.
 
 # User Stories:
 ###### Items with '*' are reach goals
