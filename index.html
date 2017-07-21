@@ -10,6 +10,7 @@
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="lib/sliiiide.min.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body class="container-fluid">
       <nav class="navbar navbar-default navbar-inverse" role="navigation">
@@ -29,18 +30,125 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li id="show-articles" class="active"><a href="#">Articles</a></li>
-              <li><a href="#">Link</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <span class="caret"></span></a>
+                <ul id="actions-dropdown" class="dropdown-menu" role="menu">
+                  <li> Use the "Tab" button to navigate</li>
+                  <li class="dropdown-inner"> <a href="#" class="dropdown-toggle-inner">Post Article<span class="caret"></span></a>
+
+                      <ul class="dropdown-menu" role="menu">
+                        <div class="input-form">
+                        <!-- Individual Article -->
+                        <h3> Create Article </h3>
+                        <form class=article-form>
+                          <div>
+                             <label>Title</label>
+                             <input type="text" class="form-control" name="[article][title]" placeholder="Title" required>
+                           </div>
+                           <div>
+                             <label>Body</label>
+                             <input type="text" class="form-control" name="[article][body]" placeholder="Body" required>
+                           </div>
+                           <div>
+                             <button type="submit" class="btn btn-primary btn-block">Post</button>
+                           </div>
+                        </form>
+                      </div>
+                      </ul>
+                  </li>
+                      <li class="dropdown-inner"> <a href="#" class="dropdown-toggle-inner">Update/Delete Article<span class="caret"></span></a>
+
+                          <ul class="dropdown-menu" role="menu">
+                            <div class="input-form">
+                              <!-- Update/Delete Article -->
+                              <h3> Update/Delete Article </h3>
+                              <div>
+                                <label>Article ID</label>
+                                <input class=article-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+                              </div>
+                              <form class=article-edit-delete-form>
+                                <div>
+                                   <label>Title</label>
+                                   <input type="text" class="form-control" name="[article][title]" placeholder="Title" required>
+                                 </div>
+                                 <div>
+                                   <label>Body</label>
+                                   <input type="text" class="form-control" name="[article][body]" placeholder="Body" required>
+                                 </div>
+                                 <div>
+                                   <button type="submit" class="btn btn-primary btn-block">Edit</button>
+                                 </div>
+                              </form>
+                              <div>
+                                <label>Article ID</label>
+                                <input class=delete-article-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+                              </div>
+                              <div>
+                                <button id="article-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
+                              </div>
+                            </div>
+                          </ul>
+                      </li>
+                      <li class="dropdown-inner"> <a href="#" class="dropdown-toggle-inner">Post Comment<span class="caret"></span></a>
+
+                        <ul class="dropdown-menu" role="menu">
+                        <div class="input-form">
+                        <!-- Individual Comment -->
+                        <h3> Create Comment </h3>
+                        <form class=comment-form>
+                          <div>
+                             <label>Article ID</label>
+                             <input type="text" class="form-control" name="[comment][article_id]" placeholder="Title" required>
+                           </div>
+                          <div>
+                             <label>Title</label>
+                             <input type="text" class="form-control" name="[comment][title]" placeholder="Title" required>
+                           </div>
+                           <div>
+                             <label>Body</label>
+                             <input type="text" class="form-control" name="[comment][body]" placeholder="Body" required>
+                           </div>
+                           <div>
+                             <button type="submit" class="btn btn-primary btn-block">Post</button>
+                           </div>
+                        </form>
+                      </div>
+                    </ul>
+                      </li>
+                      <li class="dropdown-inner"> <a href="#" class="dropdown-toggle-inner">Update/Delete Comment<span class="caret"></span></a>
+
+                          <ul class="dropdown-menu" role="menu">
+                            <div class="input-form">
+                              <!-- Update/Delete Comment -->
+                              <h3> Update/Delete Comment </h3>
+                              <div>
+                                <label>Comment ID</label>
+                                <input class=comment-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+                              </div>
+                              <form class=comment-edit-delete-form>
+                                <div>
+                                   <label>Title</label>
+                                   <input type="text" class="form-control" name="[comment][title]" placeholder="Title" required>
+                                 </div>
+                                 <div>
+                                   <label>Body</label>
+                                   <input type="text" class="form-control" name="[comment][body]" placeholder="Body" required>
+                                 </div>
+                                 <div>
+                                   <button type="submit" class="btn btn-primary btn-block">Edit</button>
+                                 </div>
+                              </form>
+                              <div>
+                                <label>Comment ID</label>
+                                <input class=delete-comment-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+                              </div>
+                              <div>
+                                <button id="comment-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
+                              </div>
+                            </div>
+                          </ul>
+                      </li>
+                  </ul>
               </li>
             </ul>
               <div>
@@ -59,12 +167,7 @@
       				<li>
       					 <div class="row">
       							<div class="col-md-12">
-      								Login via
-      								<div class="social-buttons">
-      									<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-      									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-      								</div>
-                                      or
+                      <h3>Sign In</h3>
       								 <form class="login-form">
       										<div class="form-group">
       											 <label class="sr-only">Email address</label>
@@ -81,6 +184,7 @@
                           <div class="sign-out-div">
                             <button id="sign-out-button" class="form-group" type="submit" class="btn btn-primary btn-block">Sign out</button>
                           </div>
+                          <h3>Change Password</h3>
                           <form class="change-password-form">
          										<div class="form-group">
          											 <label class="sr-only">Password</label>
@@ -105,12 +209,8 @@
       			<ul id="register-dp" class="dropdown-menu">
       					 <div class="row">
                    <div class="col-md-12">
-                     Register via
-                     <div class="social-buttons">
-                       <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                       <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-                     </div>
       								 <form class="register-form">
+                         <h3>Register</h3>
                          <div>
                             <label>Email address</label>
                             <input type="email" class="form-control" name="[credentials][email]" placeholder="Email address">
@@ -137,13 +237,12 @@
         </div><!-- /.container-fluid -->
       </nav>
 
-
+      <div class="notifications"></div>
       <!-- Articles -->
       <div class="article-container">
       </div>
 
-      <div class="input-form">
-      <!-- Individual Article -->
+      <!-- <div class="input-form">
       <h3> Create Article </h3>
       <form class=article-form>
         <div>
@@ -158,10 +257,9 @@
            <button type="submit" class="btn btn-primary btn-block">Post</button>
          </div>
       </form>
-    </div>
+    </div> -->
 
-    <div class="input-form">
-      <!-- Update/Delete Article -->
+    <!-- <div class="input-form">
       <h3> Update/Delete Article </h3>
       <div>
         <label>Article ID</label>
@@ -187,10 +285,9 @@
       <div>
         <button id="article-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
       </div>
-    </div>
+    </div> -->
 
-    <div class="input-form">
-    <!-- Individual Comment -->
+    <!-- <div class="input-form">
     <h3> Create Comment </h3>
     <form class=comment-form>
       <div>
@@ -209,10 +306,9 @@
          <button type="submit" class="btn btn-primary btn-block">Post</button>
        </div>
     </form>
-  </div>
+  </div> -->
 
-  <div class="input-form">
-    <!-- Update/Delete Comment -->
+  <!-- <div class="input-form">
     <h3> Update/Delete Comment </h3>
     <div>
       <label>Comment ID</label>
@@ -238,7 +334,7 @@
     <div>
       <button id="comment-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
     </div>
-  </div>
+  </div> -->
 
 
     </body>

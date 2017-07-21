@@ -93,8 +93,8 @@ const onDeleteComment = function (event) {
   event.preventDefault()
   store.comment_id = $('.delete-comment-id').val()
   api.deleteComment()
-    .then(ui.deleteArticleSuccess)
-    .catch(ui.deleteArticleFailure)
+    .then(ui.deleteCommentSuccess)
+    .catch(ui.deleteCommentFailure)
 }
 
 const addHandlers = () => {
