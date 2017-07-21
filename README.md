@@ -39,6 +39,16 @@ This project consisted of two phases:
 
     Frontend development was straight forward, using Ajax to communicate with Rails, and jQuery to manipulate the DOM. Handlebars was used to dynamically bind elements retrieved from the backend to elements in the DOM and HTML5/CSS was used to display them. Styling was done primarily with Bootstrap.
 
+# Unsolved Problems:
+
+- Edit/Delete Comments should be in the same div as the comments populating the page.
+- The Actions dropdown menu can only be accessed by tabbing through the input fields. Dropdown
+    menu should remained open until the user enters the submit action.
+- Paperclip gem is need to upload images.
+- Search bar should be updated to search for titles instead of IDs
+- Administrators should be able to delete comments regardless of who posted them. At the moment,
+    only the user who posted the comment may edit/delete their comment.
+
 # User Stories:
 ###### Items with '*' are reach goals
 

@@ -82,7 +82,7 @@ const createArticleSuccess = (data) => {
 const createArticleFailure = (data) => {
   console.log(data, 'create article failure')
   $('.notifications').empty()
-  $('.notifications').append('Error!')
+  $('.notifications').append('Error! Access Denied. Only Administrators May Post Articles')
 }
 const updateArticleSuccess = (data) => {
   console.log(data, 'update article success')
@@ -92,7 +92,7 @@ const updateArticleSuccess = (data) => {
 const updateArticleFailure = (data) => {
   console.log(data, 'update article failure')
   $('.notifications').empty()
-  $('.notifications').append('Error!')
+  $('.notifications').append('Error! Access Denied. Only Administrators May Update Articles')
 }
 const deleteArticleSuccess = (data) => {
   console.log(data, 'delete success')
@@ -102,7 +102,37 @@ const deleteArticleSuccess = (data) => {
 const deleteArticleFailure = (data) => {
   console.log(data, 'delete failure')
   $('.notifications').empty()
-  $('.notifications').append('Error!')
+  $('.notifications').append('Error! Access Denied. Only Administrators May Delete Articles')
+}
+const createCommentSuccess = (data) => {
+  console.log(data, 'create comment success')
+  $('.notifications').empty()
+  $('.notifications').append('Success!')
+}
+const createCommentFailure = (data) => {
+  console.log(data, 'create comment failure')
+  $('.notifications').empty()
+  $('.notifications').append('Error! Access Denied. Only Administrators and Members May Post Comments')
+}
+const updateCommentSuccess = (data) => {
+  console.log(data, 'update comment success')
+  $('.notifications').empty()
+  $('.notifications').append('Success!')
+}
+const updateCommentFailure = (data) => {
+  console.log(data, 'update comment failure')
+  $('.notifications').empty()
+  $('.notifications').append('Error! Access Denied.')
+}
+const deleteCommentSuccess = (data) => {
+  console.log(data, 'delete success')
+  $('.notifications').empty()
+  $('.notifications').append('Success!')
+}
+const deleteCommentFailure = (data) => {
+  console.log(data, 'delete failure')
+  $('.notifications').empty()
+  $('.notifications').append('Error! Access Denied.')
 }
 
 module.exports = {
@@ -123,5 +153,11 @@ module.exports = {
   updateArticleSuccess,
   updateArticleFailure,
   deleteArticleSuccess,
-  deleteArticleFailure
+  deleteArticleFailure,
+  createCommentSuccess,
+  createCommentFailure,
+  updateCommentSuccess,
+  updateCommentFailure,
+  deleteCommentSuccess,
+  deleteCommentFailure
 }
