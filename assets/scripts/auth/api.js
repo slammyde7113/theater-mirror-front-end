@@ -12,7 +12,6 @@ const signUp = function (data) {
     method: 'POST',
     data
   })
-  .then(console.log)
 }
 const signInGuest = function () {
   return $.ajax({
@@ -43,7 +42,6 @@ const signInGuest = function () {
   })
 }
 const signIn = function (data) {
-  console.log(data)
   return $.ajax({
     url: `${config.apiOrigins.production}/sign-in`,
     method: 'POST',

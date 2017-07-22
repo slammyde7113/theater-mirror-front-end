@@ -12,7 +12,6 @@ const store = require('../store.js')
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -47,7 +46,6 @@ const onShowArticles = function () {
 const onSearchArticles = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   api.searchArticles(data)
     .then(ui.searchArticlesSuccess)
     .catch(ui.searchArticlesFailure)
@@ -62,7 +60,6 @@ const onCreateArticle = function (event) {
 const onUpdateArticle = function (event) {
   event.preventDefault()
   store.article_id = $('.article-id').val()
-  console.log(store.article_id)
   const data = getFormFields(event.target)
   api.updateArticle(data)
     .then(ui.updateArticleSuccess)
@@ -78,7 +75,6 @@ const onDeleteArticle = function (event) {
 const onCreateComment = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   api.createComment(data)
     .then(ui.createCommentSuccess)
     .catch(ui.createCommentFailure)
@@ -86,7 +82,6 @@ const onCreateComment = function (event) {
 const onUpdateComment = function (event) {
   event.preventDefault()
   store.comment_id = $('.comment-id').val()
-  console.log(store.article_id)
   const data = getFormFields(event.target)
   api.updateComment(data)
     .then(ui.updateCommentSuccess)

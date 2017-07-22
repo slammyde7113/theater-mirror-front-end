@@ -7,7 +7,6 @@ const store = require('../store')
 
 const signUpSuccess = (data) => {
   $('.notifications').empty()
-  console.log(data, 'sign up success')
   $('#register-dropdown').dropdown('toggle')
   $('.modal-title').empty()
   $('.modal-title').append('Success! You are signed up')
@@ -17,7 +16,6 @@ const signUpSuccess = (data) => {
 
 const signUpFailure = (data) => {
   $('.notifications').empty()
-  console.log(data, 'sign in failure')
   $('.modal-title').empty()
   $('.modal-title').append('Error! Double check your credentials or pick a new username')
   $('.form-control').val('')
@@ -25,7 +23,6 @@ const signUpFailure = (data) => {
 }
 const signInSuccess = (data) => {
   $('.notifications').empty()
-  console.log(data, 'sign in success')
   if (data.user.email === 'admin@theatermirror.com') {
     $('#admin-actions').show()
   }
@@ -45,7 +42,6 @@ const signInSuccess = (data) => {
 const signInFailure = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Error! Double check your credentials')
-  console.log(data, 'sign in failure')
   $('.modal-title').empty()
   $('.modal-title').append('Error! Double check your credentials')
   $('.form-control').val('')
@@ -54,7 +50,6 @@ const signInFailure = (data) => {
 const changePasswordSuccess = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Success! Password changed')
-  console.log(data, 'change password success')
   $('#register-dropdown').dropdown('toggle')
   $('.modal-title').empty()
   $('.modal-title').append('Success! Password has been changed')
@@ -65,14 +60,12 @@ const changePasswordSuccess = (data) => {
 const changePasswordFailure = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Error! Double check that your old password is correct')
-  console.log(data, 'change password failure')
   $('.modal-title').empty()
   $('.modal-title').append('Error! Double check that your old password is correct')
   $('.form-control').val('')
   $('.btn.btn-secondary').delay(10000).trigger('click')
 }
 const signOutSuccess = (data) => {
-  console.log(data, 'signout success')
   $('.notifications').empty()
   $('#admin-actions').hide()
   $('#sign-out-button').hide()
@@ -88,7 +81,6 @@ const signOutSuccess = (data) => {
 }
 
 const signOutFailure = (data) => {
-  console.log(data, 'signout failure')
   $('.notifications').empty()
   $('.modal-title').empty()
   $('.notifications').append('Error! You must be signed in in order to sign out')
@@ -96,7 +88,6 @@ const signOutFailure = (data) => {
   $('.btn.btn-secondary').delay(10000).trigger('click')
 }
 const showArticlesSuccess = (data) => {
-  console.log(data)
   $('.article-container').empty()
   let showArticlesHtml
   if (!store.guest) {
@@ -109,12 +100,10 @@ const showArticlesSuccess = (data) => {
 }
 const showArticlesFailure = (data) => {
   $('.notifications').empty()
-  console.log(data)
   $('.modal-title').empty()
   $('.modal-title').append('Error! Please reload the page')
 }
 const searchArticlesSuccess = (data) => {
-  console.log(data)
   $('.article-container').empty()
   let showArticleHtml
   if (!store.guest) {
@@ -127,7 +116,6 @@ const searchArticlesSuccess = (data) => {
   $('.notifications').append('Search success!')
 }
 const searchArticlesFailure = (data) => {
-  console.log(data)
   $('.notifications').empty()
   $('.modal-title').empty()
   $('.notifications').append('Error! Article you are looking for does not exist')
@@ -136,7 +124,6 @@ const searchArticlesFailure = (data) => {
 const createArticleSuccess = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Success! Article created')
-  console.log(data, 'create article success')
   $('.modal-title').empty()
   $('.modal-title').append('Success! Article created')
   $('.article-container').empty()
@@ -145,7 +132,6 @@ const createArticleSuccess = (data) => {
 }
 const createArticleFailure = (data) => {
   $('.notifications').empty()
-  console.log(data, 'create article failure')
   $('.modal-title').empty()
   $('.modal-title').append('Error! Access Denied. Only Administrators May Post Articles')
   $('.form-control').val('')
@@ -154,7 +140,6 @@ const createArticleFailure = (data) => {
 const updateArticleSuccess = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Success! Article updated')
-  console.log(data, 'update article success')
   $('.modal-title').empty()
   $('.modal-title').append('Success! Article updated')
   $('.article-container').empty()
@@ -165,7 +150,6 @@ const updateArticleSuccess = (data) => {
 const updateArticleFailure = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Error! Access Denied. Only Administrators May Update Articles')
-  console.log(data, 'update article failure')
   $('.modal-title').empty()
   $('.modal-title').append('Error! Access Denied. Only Administrators May Update Articles')
   $('.form-control').val('')
@@ -174,7 +158,6 @@ const updateArticleFailure = (data) => {
 const deleteArticleSuccess = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Success! Article deleted')
-  console.log(data, 'delete success')
   $('.modal-title').empty()
   $('.modal-title').append('Success! Article deleted')
   $('.delete-article-id').val('')
@@ -184,7 +167,6 @@ const deleteArticleSuccess = (data) => {
 const deleteArticleFailure = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Error! Access Denied. Only Administrators May Delete Articles')
-  console.log(data, 'delete failure')
   $('.modal-title').empty()
   $('.modal-title').append('Error! Access Denied. Only Administrators May Delete Articles')
   $('.notifications').append('Error! Access Denied. Only Administrators May Delete Articles')
@@ -192,7 +174,6 @@ const deleteArticleFailure = (data) => {
 const createCommentSuccess = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Success! Comment created')
-  console.log(data, 'create comment success')
   $('.modal-title').empty()
   $('.modal-title').append('Success! Comment created')
   $('.article-container').empty()
@@ -202,7 +183,6 @@ const createCommentSuccess = (data) => {
 }
 const createCommentFailure = (data) => {
   $('.notifications').empty()
-  console.log(data, 'create comment failure')
   $('.modal-title').empty()
   $('.modal-title').append('Error! Access Denied. Only Administrators and Members May Post Comments')
   $('.form-control').val('')
@@ -211,7 +191,6 @@ const createCommentFailure = (data) => {
 const updateCommentSuccess = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Success! Comment updated')
-  console.log(data, 'update comment success')
   $('.modal-title').empty()
   $('.modal-title').append('Success! Comment updated')
   $('.article-container').empty()
@@ -222,7 +201,6 @@ const updateCommentSuccess = (data) => {
 const updateCommentFailure = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Error! Comment not updated')
-  console.log(data, 'update comment failure')
   $('.modal-title').empty()
   $('.modal-title').append('Error! Access Denied. Make sure the comment you are updating is your comment')
   $('.form-control').val('')
@@ -231,7 +209,6 @@ const updateCommentFailure = (data) => {
 const deleteCommentSuccess = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Success! Comment deleted')
-  console.log(data, 'delete success')
   $('.modal-title').empty()
   $('.modal-title').append('Success! Comment deleted')
   $('.article-container').empty()
@@ -241,7 +218,6 @@ const deleteCommentSuccess = (data) => {
 const deleteCommentFailure = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Error! Comment not deleted')
-  console.log(data, 'delete failure')
   $('.modal-title').empty()
   $('.modal-title').append('Error! Access Denied. Make sure the comment you are updating is your comment')
 }

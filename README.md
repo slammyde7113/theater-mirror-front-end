@@ -7,6 +7,10 @@
 Link to hosted application:
 [TheaterMirror By Sam Dyer](https://slammyde7113.github.io/theater-mirror-front-end/)
 
+### Landing Page:
+
+![alt text](images/TheaterM.png "Picture of Website")
+
 Link to back-end api:
 [Rails Api](https://github.com/slammyde7113/theater-mirror-back-end)
 
@@ -35,7 +39,7 @@ This project consisted of two phases
 
     1.) Backend Development
     2.) Frontend development
-    
+
   In the backend development phase, research was done to implement specific Ruby gems, such as [CanCan](https://rubygems.org/gems/cancan/versions/1.6.10) and [Paperclip](https://rubygems.org/gems/paperclip/versions/4.3.6). Initially, CanCan was going to be used for authentication, however a much simpler work around was incorporated through the GA Rails template. Paperclip will be incorporated at a later date to facilitate uploads, but the multi-role authentication (guest, member, and admin) took priority.
    Frontend development was straight forward, using Ajax to communicate with Rails, and jQuery to manipulate the DOM. Handlebars was used to dynamically bind elements retrieved from the backend to elements in the DOM and HTML5/CSS was used to display them. Styling was done primarily with Bootstrap.
 
