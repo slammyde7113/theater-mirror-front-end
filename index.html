@@ -131,6 +131,27 @@
       <button id="sign-out-button" class="btn btn-primary btn-sm" type="submit">
                 Sign Out
       </button>
+      <button id="show-articles" type="button" class="btn btn-primary btn-sm">
+                Articles
+      </button>
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#postArticleModal">
+                Post Article
+      </button>
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updateArticleModal">
+                Update Article
+      </button>
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#deleteArticleModal">
+                Delete Article
+      </button>
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#postCommentModal">
+                Post Comment
+      </button>
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updateCommentModal">
+                Update Comment
+      </button>
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#deleteCommentModal">
+                Delete Comment
+      </button>
 
 
 
@@ -139,99 +160,15 @@
       <div class="article-container">
       </div>
 
-
-      <!-- <div class="input-form">
-      <h3> Create Article </h3>
-      <form class=article-form>
-        <div>
-           <label>Title</label>
-           <input type="text" class="form-control" name="[article][title]" placeholder="Title" required>
-         </div>
-         <div>
-           <label>Body</label>
-           <input type="text" class="form-control" name="[article][body]" placeholder="Body" required>
-         </div>
-         <div>
-           <button type="submit" class="btn btn-primary btn-block">Post</button>
-         </div>
-      </form>
-    </div> -->
-
-    <!-- <div class="input-form">
-      <h3> Update/Delete Article </h3>
-      <div>
-        <label>Article ID</label>
-        <input class=article-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
-      </div>
-      <form class=article-edit-delete-form>
-        <div>
-           <label>Title</label>
-           <input type="text" class="form-control" name="[article][title]" placeholder="Title" required>
-         </div>
-         <div>
-           <label>Body</label>
-           <input type="text" class="form-control" name="[article][body]" placeholder="Body" required>
-         </div>
-         <div>
-           <button type="submit" class="btn btn-primary btn-block">Edit</button>
-         </div>
-      </form>
-      <div>
-        <label>Article ID</label>
-        <input class=delete-article-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
-      </div>
-      <div>
-        <button id="article-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
-      </div>
-    </div> -->
-
     <!-- <div class="input-form">
     <h3> Create Comment </h3>
-    <form class=comment-form>
-      <div>
-         <label>Article ID</label>
-         <input type="text" class="form-control" name="[comment][article_id]" placeholder="Title" required>
-       </div>
-      <div>
-         <label>Title</label>
-         <input type="text" class="form-control" name="[comment][title]" placeholder="Title" required>
-       </div>
-       <div>
-         <label>Body</label>
-         <input type="text" class="form-control" name="[comment][body]" placeholder="Body" required>
-       </div>
-       <div>
-         <button type="submit" class="btn btn-primary btn-block">Post</button>
-       </div>
-    </form>
+
   </div> -->
 
   <!-- <div class="input-form">
     <h3> Update/Delete Comment </h3>
-    <div>
-      <label>Comment ID</label>
-      <input class=comment-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
-    </div>
-    <form class=comment-edit-delete-form>
-      <div>
-         <label>Title</label>
-         <input type="text" class="form-control" name="[comment][title]" placeholder="Title" required>
-       </div>
-       <div>
-         <label>Body</label>
-         <input type="text" class="form-control" name="[comment][body]" placeholder="Body" required>
-       </div>
-       <div>
-         <button type="submit" class="btn btn-primary btn-block">Edit</button>
-       </div>
-    </form>
-    <div>
-      <label>Comment ID</label>
-      <input class=delete-comment-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
-    </div>
-    <div>
-      <button id="comment-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
-    </div>
+
+
   </div> -->
   <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" display= "none">
           <div class="modal-dialog" role="document">
@@ -329,6 +266,189 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="postArticleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" display= "none">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLabel"></h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class=article-form>
+                <div>
+                   <label>Title</label>
+                   <input type="text" class="form-control" name="[article][title]" placeholder="Title" required>
+                 </div>
+                 <div>
+                   <label>Body</label>
+                   <input type="text" class="form-control" name="[article][body]" placeholder="Body" required>
+                 </div>
+                 <div>
+                   <button type="submit" class="btn btn-primary btn-block">Post</button>
+                 </div>
+              </form>            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<div class="modal fade" id="updateArticleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" display= "none">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLabel"></h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <label>Article ID</label>
+                <input class=article-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+              </div>
+              <form class=article-edit-delete-form>
+                <div>
+                   <label>Title</label>
+                   <input type="text" class="form-control" name="[article][title]" placeholder="Title" required>
+                 </div>
+                 <div>
+                   <label>Body</label>
+                   <input type="text" class="form-control" name="[article][body]" placeholder="Body" required>
+                 </div>
+                 <div>
+                   <button type="submit" class="btn btn-primary btn-block">Edit</button>
+                 </div>
+              </form>            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<div class="modal fade" id="deleteArticleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" display= "none">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLabel"></h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+              <div>
+                <label>Article ID</label>
+                <input class=delete-article-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+              </div>
+              <div>
+                <button id="article-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
+              </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<div class="modal fade" id="postCommentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" display= "none">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLabel"></h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class=comment-form>
+                <div>
+                   <label>Article ID</label>
+                   <input type="text" class="form-control" name="[comment][article_id]" placeholder="Title" required>
+                 </div>
+                <div>
+                   <label>Title</label>
+                   <input type="text" class="form-control" name="[comment][title]" placeholder="Title" required>
+                 </div>
+                 <div>
+                   <label>Body</label>
+                   <input type="text" class="form-control" name="[comment][body]" placeholder="Body" required>
+                 </div>
+                 <div>
+                   <button type="submit" class="btn btn-primary btn-block">Post</button>
+                 </div>
+              </form>            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<div class="modal fade" id="updateCommentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" display= "none">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLabel"></h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <label>Comment ID</label>
+                <input class=comment-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+              </div>
+              <form class=comment-edit-delete-form>
+                <div>
+                   <label>Title</label>
+                   <input type="text" class="form-control" name="[comment][title]" placeholder="Title" required>
+                 </div>
+                 <div>
+                   <label>Body</label>
+                   <input type="text" class="form-control" name="[comment][body]" placeholder="Body" required>
+                 </div>
+                 <div>
+                   <button type="submit" class="btn btn-primary btn-block">Edit</button>
+                 </div>
+              </form>            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<div class="modal fade" id="deleteCommentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" display= "none">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLabel"></h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <label>Comment ID</label>
+                <input class=delete-comment-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
+              </div>
+              <div>
+                <button id="comment-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
+              </div>            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </body>
 </html>
