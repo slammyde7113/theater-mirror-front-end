@@ -1,5 +1,8 @@
 'use strict'
-
+const showArticlesTemplate = require('../templates/all-articles.handlebars')
+const showGuestArticlesTemplate = require('../templates/all-guest-articles.handlebars')
+const showArticleTemplate = require('../templates/one-article.handlebars')
+const showGuestArticleTemplate = require('../templates/one-guest-article.handlebars')
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
