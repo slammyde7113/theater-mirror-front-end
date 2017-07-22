@@ -13,9 +13,8 @@
       <script src="lib/sliiiide.min.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body class="container-fluid">
-      <nav class="navbar navbar-default navbar-inverse" role="navigation">
+      <!-- <nav class="navbar navbar-toggleable-md navbar-light bg-faded" role="navigation">
         <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span class="sr-only">Toggle navigation</span>
@@ -26,131 +25,17 @@
             <a class="navbar-brand" href="#">Theater Mirror</a>
           </div>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li id="show-articles" class="active"><a href="#">Articles</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <span class="caret"></span></a>
-                <ul id="actions-dropdown" class="dropdown-menu" role="menu">
-                  <li> Use the "Tab" button to navigate</li>
-                  <li class="dropdown-inner"> <a href="#" class="dropdown-toggle-inner">Post Article<span class="caret"></span></a>
-
-                      <ul class="dropdown-menu" role="menu">
-                        <div class="input-form">
-                        <!-- Individual Article -->
-                        <h3> Create Article </h3>
-                        <form class=article-form>
-                          <div>
-                             <label>Title</label>
-                             <input type="text" class="form-control" name="[article][title]" placeholder="Title" required>
-                           </div>
-                           <div>
-                             <label>Body</label>
-                             <input type="text" class="form-control" name="[article][body]" placeholder="Body" required>
-                           </div>
-                           <div>
-                             <button type="submit" class="btn btn-primary btn-block">Post</button>
-                           </div>
-                        </form>
-                      </div>
-                      </ul>
-                  </li>
-                      <li class="dropdown-inner"> <a href="#" class="dropdown-toggle-inner">Update/Delete Article<span class="caret"></span></a>
-
-                          <ul class="dropdown-menu" role="menu">
-                            <div class="input-form">
-                              <!-- Update/Delete Article -->
-                              <h3> Update/Delete Article </h3>
-                              <div>
-                                <label>Article ID</label>
-                                <input class=article-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
-                              </div>
-                              <form class=article-edit-delete-form>
-                                <div>
-                                   <label>Title</label>
-                                   <input type="text" class="form-control" name="[article][title]" placeholder="Title" required>
-                                 </div>
-                                 <div>
-                                   <label>Body</label>
-                                   <input type="text" class="form-control" name="[article][body]" placeholder="Body" required>
-                                 </div>
-                                 <div>
-                                   <button type="submit" class="btn btn-primary btn-block">Edit</button>
-                                 </div>
-                              </form>
-                              <div>
-                                <label>Article ID</label>
-                                <input class=delete-article-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
-                              </div>
-                              <div>
-                                <button id="article-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
-                              </div>
-                            </div>
-                          </ul>
-                      </li>
-                      <li class="dropdown-inner"> <a href="#" class="dropdown-toggle-inner">Post Comment<span class="caret"></span></a>
-
-                        <ul class="dropdown-menu" role="menu">
-                        <div class="input-form">
-                        <!-- Individual Comment -->
-                        <h3> Create Comment </h3>
-                        <form class=comment-form>
-                          <div>
-                             <label>Article ID</label>
-                             <input type="text" class="form-control" name="[comment][article_id]" placeholder="Title" required>
-                           </div>
-                          <div>
-                             <label>Title</label>
-                             <input type="text" class="form-control" name="[comment][title]" placeholder="Title" required>
-                           </div>
-                           <div>
-                             <label>Body</label>
-                             <input type="text" class="form-control" name="[comment][body]" placeholder="Body" required>
-                           </div>
-                           <div>
-                             <button type="submit" class="btn btn-primary btn-block">Post</button>
-                           </div>
-                        </form>
-                      </div>
-                    </ul>
-                      </li>
-                      <li class="dropdown-inner"> <a href="#" class="dropdown-toggle-inner">Update/Delete Comment<span class="caret"></span></a>
-
-                          <ul class="dropdown-menu" role="menu">
-                            <div class="input-form">
-                              <!-- Update/Delete Comment -->
-                              <h3> Update/Delete Comment </h3>
-                              <div>
-                                <label>Comment ID</label>
-                                <input class=comment-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
-                              </div>
-                              <form class=comment-edit-delete-form>
-                                <div>
-                                   <label>Title</label>
-                                   <input type="text" class="form-control" name="[comment][title]" placeholder="Title" required>
-                                 </div>
-                                 <div>
-                                   <label>Body</label>
-                                   <input type="text" class="form-control" name="[comment][body]" placeholder="Body" required>
-                                 </div>
-                                 <div>
-                                   <button type="submit" class="btn btn-primary btn-block">Edit</button>
-                                 </div>
-                              </form>
-                              <div>
-                                <label>Comment ID</label>
-                                <input class=delete-comment-id type="text" class="form-control" placeholder="ID" placeholder="ID" required>
-                              </div>
-                              <div>
-                                <button id="comment-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
-                              </div>
-                            </div>
-                          </ul>
-                      </li>
-                  </ul>
-              </li>
-            </ul>
+            <button id="menu-button" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signUpModal">
+            Sign Up
+            </button>
+          </li>
               <div>
                 <form id="search-form" class="navbar-form navbar-left" role="search">
                 <input type="text" class="form-control" name=articles[id] placeholder="Search by Article ID">
@@ -162,7 +47,6 @@
               <li id="login-dropdown" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
 
-            <!--Login-->
       			<ul id="login-dp" class="dropdown-menu">
       				<li>
       					 <div class="row">
@@ -203,7 +87,6 @@
       			</ul>
               </li>
 
-              <!-- Register -->
               <li id="register-dropdown" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Register</b> <span class="caret"></span></a>
       			<ul id="register-dp" class="dropdown-menu">
@@ -233,14 +116,29 @@
       			</ul>
               </li>
             </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
+          </div>
+        </div>
+      </nav> -->
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signUpModal">
+                Sign Up
+      </button>
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal">
+                Sign In
+      </button>
+      <button id="change-password" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#changePasswordModal">
+                Change Password
+      </button>
+      <button id="sign-out-button" class="btn btn-primary btn-sm" type="submit">
+                Sign Out
+      </button>
+
+
 
       <div class="notifications"></div>
       <!-- Articles -->
       <div class="article-container">
       </div>
+
 
       <!-- <div class="input-form">
       <h3> Create Article </h3>
@@ -335,7 +233,102 @@
       <button id="comment-delete-button" type="submit" class="btn btn-primary btn-block">Delete</button>
     </div>
   </div> -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" display= "none">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel"></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="register-form">
+                  <h3>Register</h3>
+                  <div>
+                     <label>Email address</label>
+                     <input type="email" class="form-control" name="[credentials][email]" placeholder="Email address">
+                   </div>
+                   <div>
+                     <label>Password</label>
+                     <input type="password" class="form-control" name="[credentials][password]" placeholder="Password" required>
+                   </div>
+                   <div>
+                     <label>Password Confirmation</label>
+                     <input type="password" class="form-control" name="[credentials][password_confirmation]" placeholder="Password Confirmation" required>
+                   </div>
+                     <label> Account Status: Member</label>
+                     <input type="hidden" class="form-control" name="[credentials][member]" value=true>
+                     <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
+  <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel"></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="login-form">
+           <div class="form-group">
+              <label class="sr-only">Email address</label>
+              <input type="email" class="form-control" name="[credentials][email]" placeholder="Email address" required>
+           </div>
+           <div class="form-group">
+              <label class="sr-only">Password</label>
+              <input type="password" class="form-control" name="[credentials][password]" placeholder="Password" required>
+           </div>
+           <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+           </div>
+         </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel"></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="change-password-form">
+          <div class="form-group">
+             <label class="sr-only">Password</label>
+             <input type="password" class="form-control" name="[passwords][old]" placeholder="Old Password" required>
+          </div>
+          <div>
+            <input type="password" class="form-control" name="[passwords][new]" placeholder="New Password" required>
+          </div>
+          <div class="form-group">
+             <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+          </div>
+     </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     </body>
 </html>
