@@ -12,7 +12,22 @@ body{
     background-size: cover;
 
 }
-
+#search-input {
+  position: relative;
+}
+#sign-out-button {
+  display: none;
+}
+#change-password {
+  display: none;
+}
+#admin-actions {
+  display: none;
+}
+#user-log {
+  color: white;
+  background: red;
+}
 // Navbar
 #login-dp{
     min-width: 250px;

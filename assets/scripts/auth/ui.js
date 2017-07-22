@@ -1,6 +1,9 @@
 'use strict'
 const showArticlesTemplate = require('../templates/all-articles.handlebars')
+const showGuestArticlesTemplate = require('../templates/all-guest-articles.handlebars')
 const showArticleTemplate = require('../templates/one-article.handlebars')
+const showGuestArticleTemplate = require('../templates/one-guest-article.handlebars')
+const store = require('../store')
 
 const signUpSuccess = (data) => {
   console.log(data, 'sign up success')
@@ -16,8 +19,18 @@ const signUpFailure = (data) => {
 }
 const signInSuccess = (data) => {
   console.log(data, 'sign in success')
+  if (data.user.email === 'admin@theatermirror.com') {
+    $('#admin-actions').show()
+  }
+  $('#sign-out-button').show()
+  $('#change-password').show()
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#user-log').empty()
+  $('#user-log').append('Signed in as: ' + data.user.email + ', ID = ' + data.user.id)
   $('.notifications').empty()
   $('.notifications').append('Success!')
+  $('#show-articles').trigger('click')
 }
 
 const signInFailure = (data) => {
@@ -37,6 +50,11 @@ const changePasswordFailure = (data) => {
 }
 const signOutSuccess = (data) => {
   console.log(data, 'signout success')
+  $('#admin-actions').hide()
+  $('#sign-out-button').hide()
+  $('#change-password').hide()
+  $('#sign-in').show()
+  $('#sign-up').show()
   $('#register-dropdown').dropdown('toggle')
   $('.notifications').empty()
   $('.notifications').append('Success!')
@@ -50,10 +68,14 @@ const signOutFailure = (data) => {
 const showArticlesSuccess = (data) => {
   console.log(data)
   $('.article-container').empty()
-  const showArticlesHtml = showArticlesTemplate({ article: data.articles })
+  let showArticlesHtml
+  if (!store.guest) {
+    showArticlesHtml = showArticlesTemplate({ article: data.articles })
+  } else {
+    showArticlesHtml = showGuestArticlesTemplate({ article: data.articles })
+  }
   $('.article-container').append(showArticlesHtml)
   $('.notifications').empty()
-  $('.notifications').append('Success!')
 }
 const showArticlesFailure = (data) => {
   console.log(data)
@@ -63,7 +85,12 @@ const showArticlesFailure = (data) => {
 const searchArticlesSuccess = (data) => {
   console.log(data)
   $('.article-container').empty()
-  const showArticleHtml = showArticleTemplate({ article: data.article })
+  let showArticleHtml
+  if (!store.guest) {
+    showArticleHtml = showArticleTemplate({ article: data.articles })
+  } else {
+    showArticleHtml = showGuestArticleTemplate({ article: data.articles })
+  }
   $('.article-container').append(showArticleHtml)
   $('.notifications').empty()
   $('.notifications').append('Success!')

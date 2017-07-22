@@ -22,8 +22,10 @@ const signInGuest = function () {
     }
   })
   .then((response) => {
+    $('#user-log').append('Signed in as: ' + response.user.email + ', ID = ' + response.user.id)
     store.userToken = response.user.token
     store.id = response.user.id
+    store.guest = true
     return store.userToken
   })
 }
@@ -37,7 +39,8 @@ const signIn = function (data) {
   .then((response) => {
     store.userToken = response.user.token
     store.id = response.user.id
-    return store.userToken
+    store.guest = false
+    return response
   })
 }
 const changePassword = function (data) {
