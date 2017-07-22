@@ -6,18 +6,21 @@ const showGuestArticleTemplate = require('../templates/one-guest-article.handleb
 const store = require('../store')
 
 const signUpSuccess = (data) => {
+  $('.notifications').empty()
   console.log(data, 'sign up success')
   $('#register-dropdown').dropdown('toggle')
-  $('.notifications').empty()
-  $('.notifications').append('Success!')
+  $('.modal-title').empty()
+  $('.modal-title').append('Success! You are signed up')
 }
 
 const signUpFailure = (data) => {
-  console.log(data, 'sign in failure')
   $('.notifications').empty()
-  $('.notifications').append('Error!')
+  console.log(data, 'sign in failure')
+  $('.modal-title').empty()
+  $('.modal-title').append('Error! Double check your credentials or pick a new username')
 }
 const signInSuccess = (data) => {
+  $('.notifications').empty()
   console.log(data, 'sign in success')
   if (data.user.email === 'admin@theatermirror.com') {
     $('#admin-actions').show()
@@ -28,25 +31,30 @@ const signInSuccess = (data) => {
   $('#sign-up').hide()
   $('#user-log').empty()
   $('#user-log').append('Signed in as: ' + data.user.email + ', ID = ' + data.user.id)
-  $('.notifications').empty()
-  $('.notifications').append('Success!')
+  $('.modal-title').empty()
+  $('.modal-title').append('Success! You are signed in')
   $('#show-articles').trigger('click')
 }
 
 const signInFailure = (data) => {
+  $('.notifications').empty()
   console.log(data, 'sign in failure')
+  $('.modal-title').empty()
+  $('.modal-title').append('Error! Double check your credentials')
 }
 const changePasswordSuccess = (data) => {
+  $('.notifications').empty()
   console.log(data, 'change password success')
   $('#register-dropdown').dropdown('toggle')
-  $('.notifications').empty()
-  $('.notifications').append('Success!')
+  $('.modal-title').empty()
+  $('.modal-title').append('Success! Password has been changed')
 }
 
 const changePasswordFailure = (data) => {
-  console.log(data, 'change password failure')
   $('.notifications').empty()
-  $('.notifications').append('Error!')
+  console.log(data, 'change password failure')
+  $('.modal-title').empty()
+  $('.modal-title').append('Error! Double check that your old password is correct')
 }
 const signOutSuccess = (data) => {
   console.log(data, 'signout success')
@@ -56,14 +64,14 @@ const signOutSuccess = (data) => {
   $('#sign-in').show()
   $('#sign-up').show()
   $('#register-dropdown').dropdown('toggle')
-  $('.notifications').empty()
-  $('.notifications').append('Success!')
+  $('.modal-title').empty()
+  $('.notifications').append('Success! You are signed out')
 }
 
 const signOutFailure = (data) => {
   console.log(data, 'signout failure')
-  $('.notifications').empty()
-  $('.notifications').append('Error!')
+  $('.modal-title').empty()
+  $('.notifications').append('Error! You must be signed in in order to sign out')
 }
 const showArticlesSuccess = (data) => {
   console.log(data)
@@ -78,88 +86,108 @@ const showArticlesSuccess = (data) => {
   $('.notifications').empty()
 }
 const showArticlesFailure = (data) => {
-  console.log(data)
   $('.notifications').empty()
-  $('.notifications').append('Error!')
+  console.log(data)
+  $('.modal-title').empty()
+  $('.modal-title').append('Error! Please reload the page')
 }
 const searchArticlesSuccess = (data) => {
   console.log(data)
   $('.article-container').empty()
   let showArticleHtml
   if (!store.guest) {
-    showArticleHtml = showArticleTemplate({ article: data.articles })
+    showArticleHtml = showArticleTemplate({ article: data.article })
   } else {
-    showArticleHtml = showGuestArticleTemplate({ article: data.articles })
+    showArticleHtml = showGuestArticleTemplate({ article: data.article })
   }
   $('.article-container').append(showArticleHtml)
   $('.notifications').empty()
-  $('.notifications').append('Success!')
+  $('.notifications').append('Search success!')
 }
 const searchArticlesFailure = (data) => {
   console.log(data)
   $('.notifications').empty()
-  $('.notifications').append('Error!')
+  $('.modal-title').empty()
+  $('.notifications').append('Error! Article you are looking for does not exist')
 }
 
 const createArticleSuccess = (data) => {
-  console.log(data, 'create article success')
   $('.notifications').empty()
-  $('.notifications').append('Success!')
+  console.log(data, 'create article success')
+  $('.modal-title').empty()
+  $('.modal-title').append('Success! Article created')
+  $('.article-container').empty()
 }
 const createArticleFailure = (data) => {
-  console.log(data, 'create article failure')
   $('.notifications').empty()
-  $('.notifications').append('Error! Access Denied. Only Administrators May Post Articles')
+  console.log(data, 'create article failure')
+  $('.modal-title').empty()
+  $('.modal-title').append('Error! Access Denied. Only Administrators May Post Articles')
 }
 const updateArticleSuccess = (data) => {
-  console.log(data, 'update article success')
   $('.notifications').empty()
-  $('.notifications').append('Success!')
+  console.log(data, 'update article success')
+  $('.modal-title').empty()
+  $('.modal-title').append('Success! Article updated')
+  $('.article-container').empty()
 }
 const updateArticleFailure = (data) => {
-  console.log(data, 'update article failure')
   $('.notifications').empty()
-  $('.notifications').append('Error! Access Denied. Only Administrators May Update Articles')
+  console.log(data, 'update article failure')
+  $('.modal-title').empty()
+  $('.modal-title').append('Error! Access Denied. Only Administrators May Update Articles')
 }
 const deleteArticleSuccess = (data) => {
-  console.log(data, 'delete success')
   $('.notifications').empty()
-  $('.notifications').append('Success!')
+  console.log(data, 'delete success')
+  $('.modal-title').empty()
+  $('.modal-title').append('Success! Article deleted')
+  $('.article-container').empty()
 }
 const deleteArticleFailure = (data) => {
-  console.log(data, 'delete failure')
   $('.notifications').empty()
+  console.log(data, 'delete failure')
+  $('.modal-title').empty()
   $('.notifications').append('Error! Access Denied. Only Administrators May Delete Articles')
 }
 const createCommentSuccess = (data) => {
-  console.log(data, 'create comment success')
   $('.notifications').empty()
-  $('.notifications').append('Success!')
+  console.log(data, 'create comment success')
+  $('.modal-title').empty()
+  $('.modal-title').append('Success! Comment created')
+  $('.article-container').empty()
 }
 const createCommentFailure = (data) => {
-  console.log(data, 'create comment failure')
   $('.notifications').empty()
-  $('.notifications').append('Error! Access Denied. Only Administrators and Members May Post Comments')
+  console.log(data, 'create comment failure')
+  $('.modal-title').empty()
+  $('.modal-title').append('Error! Access Denied. Only Administrators and Members May Post Comments')
 }
 const updateCommentSuccess = (data) => {
-  console.log(data, 'update comment success')
   $('.notifications').empty()
-  $('.notifications').append('Success!')
+  console.log(data, 'update comment success')
+  $('.modal-title').empty()
+  $('.modal-title').append('Success! Comment updated')
+  $('.article-container').empty()
 }
 const updateCommentFailure = (data) => {
-  console.log(data, 'update comment failure')
   $('.notifications').empty()
-  $('.notifications').append('Error! Access Denied.')
+  console.log(data, 'update comment failure')
+  $('.modal-title').empty()
+  $('.modal-title').append('Error! Access Denied. Make sure the comment you are updating is your comment')
 }
 const deleteCommentSuccess = (data) => {
-  console.log(data, 'delete success')
   $('.notifications').empty()
-  $('.notifications').append('Success!')
+  console.log(data, 'delete success')
+  $('.modal-title').empty()
+  $('.modal-title').append('Success! Comment deleted')
+  $('.article-container').empty()
 }
 const deleteCommentFailure = (data) => {
-  console.log(data, 'delete failure')
   $('.notifications').empty()
-  $('.notifications').append('Error! Access Denied.')
+  console.log(data, 'delete failure')
+  $('.modal-title').empty()
+  $('.modal-title').append('Error! Access Denied. Make sure the comment you are updating is your comment')
 }
 
 module.exports = {
