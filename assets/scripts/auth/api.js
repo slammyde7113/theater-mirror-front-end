@@ -8,14 +8,14 @@ const store = require('../store')
 
 const signUp = function (data) {
   return $.ajax({
-    url: `${config.apiOrigins.development}/sign-up/`,
+    url: `${config.apiOrigins.production}/sign-up/`,
     method: 'POST',
     data
   })
 }
 const signInGuest = function () {
   return $.ajax({
-    url: `${config.apiOrigins.development}/sign-in`,
+    url: `${config.apiOrigins.production}/sign-in`,
     method: 'POST',
     data: {
       'credentials': {
@@ -37,7 +37,7 @@ const signInGuest = function () {
 }
 const signIn = function (data) {
   return $.ajax({
-    url: `${config.apiOrigins.development}/sign-in`,
+    url: `${config.apiOrigins.production}/sign-in`,
     method: 'POST',
     data
   })
@@ -53,14 +53,14 @@ const changePassword = function (data) {
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
-    url: `${config.apiOrigins.development}/change-password/${store.id}`,
+    url: `${config.apiOrigins.production}/change-password/${store.id}`,
     method: 'PATCH',
     data
   })
 }
 const signOut = function () {
   return $.ajax({
-    url: `${config.apiOrigins.development}/sign-out/${store.id}`,
+    url: `${config.apiOrigins.production}/sign-out/${store.id}`,
     method: 'DELETE',
     headers: {
       'Authorization': `Token token=${store.userToken}`
@@ -75,7 +75,7 @@ const showArticles = function (data) {
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
-    url: `${config.apiOrigins.development}/articles`,
+    url: `${config.apiOrigins.production}/articles`,
     method: 'GET'
   })
 }
@@ -84,7 +84,7 @@ const searchArticles = function (data) {
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
-    url: `${config.apiOrigins.development}/articles/${data.articles.id}`,
+    url: `${config.apiOrigins.production}/articles/${data.articles.id}`,
     method: 'GET'
   })
 }
@@ -93,7 +93,7 @@ const createArticle = function (data) {
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
-    url: `${config.apiOrigins.development}/articles`,
+    url: `${config.apiOrigins.production}/articles`,
     method: 'POST',
     data
   })
@@ -103,7 +103,7 @@ const updateArticle = function (data) {
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
-    url: `${config.apiOrigins.development}/articles/${store.article_id}`,
+    url: `${config.apiOrigins.production}/articles/${store.article_id}`,
     method: 'PATCH',
     data
   })
@@ -113,7 +113,7 @@ const deleteArticle = function () {
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
-    url: `${config.apiOrigins.development}/articles/${store.article_id}`,
+    url: `${config.apiOrigins.production}/articles/${store.article_id}`,
     method: 'DELETE'
   })
 }
@@ -122,7 +122,7 @@ const createComment = function (data) {
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
-    url: `${config.apiOrigins.development}/comments`,
+    url: `${config.apiOrigins.production}/comments`,
     method: 'POST',
     data
   })
@@ -132,7 +132,7 @@ const updateComment = function (data) {
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
-    url: `${config.apiOrigins.development}/comments/${store.comment_id}`,
+    url: `${config.apiOrigins.production}/comments/${store.comment_id}`,
     method: 'PATCH',
     data
   })
@@ -142,7 +142,7 @@ const deleteComment = function () {
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
-    url: `${config.apiOrigins.development}/comments/${store.comment_id}`,
+    url: `${config.apiOrigins.production}/comments/${store.comment_id}`,
     method: 'DELETE'
   })
 }
