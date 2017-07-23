@@ -202,7 +202,7 @@ const updateCommentFailure = (data) => {
   $('.notifications').empty()
   $('.notifications').append('Error! Comment not updated')
   $('.modal-title').empty()
-  $('.modal-title').append('Error! Access Denied. Make sure the comment you are updating is your comment')
+  $('.modal-title').append('Error! Access Denied. Make sure the comment you are deleting is your comment')
   $('.form-control').val('')
   $('.btn.btn-secondary').delay(10000).trigger('click')
 }
